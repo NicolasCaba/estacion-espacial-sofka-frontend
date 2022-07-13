@@ -2,32 +2,21 @@ import { NaveEspacial } from "./nave-espacial.class";
 import { NaveNoTripulada } from "./nave-no-tripulada.class";
 import { NaveTripulada } from "./nave-tripulada.class";
 
-
-export interface INaveLanzadera {
-  nombre: string;
-  categoria: string;
-  tipoDeCombustible: string;
-  nivelDeCombustible: number;
-  mision: string;
-  pesoEnKg: number;
-  carga: NaveNoTripulada | NaveTripulada;
-
-  despegar(): void;
-  propulsar(): void;
+// Interface NaveLanzadera
+interface INaveLanzadera {
+  // Methods
   cambiarCarga(): void;
   soltarCarga(): boolean;
 }
 
-export class NaveLanzadera extends NaveEspacial implements INaveLanzadera {
-  nombre: string;
-  categoria: string ;
-  tipoDeCombustible: string ;
-  nivelDeCombustible: number ;
-  mision: string ;
-  pesoEnKg: number;
-  carga: NaveNoTripulada | NaveTripulada;
 
-  constructor (
+// Class NaveLanzadera
+export class NaveLanzadera extends NaveEspacial implements INaveLanzadera {
+  // Attributes
+  private _carga: NaveNoTripulada | NaveTripulada;
+
+  // Constructor
+  constructor(
     nombre: string,
     categoria: string,
     tipoDeCombustible: string,
@@ -36,20 +25,23 @@ export class NaveLanzadera extends NaveEspacial implements INaveLanzadera {
     pesoEnKg: number,
     carga: NaveNoTripulada | NaveTripulada
   ) {
-    super();
+    super(
+      nombre,
+      categoria,
+      tipoDeCombustible,
+      nivelDeCombustible,
+      mision,
+      pesoEnKg
+    );
 
-    this.nombre = nombre;
-    this.categoria = categoria;
-    this.tipoDeCombustible = tipoDeCombustible;
-    this.nivelDeCombustible = nivelDeCombustible;
-    this.mision = mision;
-    this.pesoEnKg = pesoEnKg;
-    this.carga = carga;
+    this._carga = carga;
   }
-  
 
+  // Methods
   despegar(): void {
-    
+    if (this._carga.estado === 'Listo para despegar') {
+      this._estado = 'Despegando....';
+    }
   }
   cambiarCarga(): void {
     throw new Error("Method not implemented.");
@@ -58,7 +50,19 @@ export class NaveLanzadera extends NaveEspacial implements INaveLanzadera {
     throw new Error("Method not implemented.");
   }
   aterrizar(): void {
-    
+
   }
+
+  // Getters
+  public get carga() : NaveNoTripulada | NaveTripulada {
+    return this._carga;
+  }
+
+  // Setters
+  public set carga(carga : NaveNoTripulada | NaveTripulada) {
+    this._carga = carga;
+  }
+  
+  
 
 }

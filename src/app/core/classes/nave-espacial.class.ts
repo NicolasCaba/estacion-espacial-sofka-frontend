@@ -1,16 +1,80 @@
+// Main NaveEspacial abstract class
 export abstract class NaveEspacial {
-  protected abstract nombre: string;
-  protected abstract categoria: string;
-  protected abstract tipoDeCombustible: string;
-  protected abstract nivelDeCombustible: number;
-  protected abstract mision: string;
-  protected abstract pesoEnKg: number;
-  protected estado: string = 'En tierra';
+  // Attributes
+  protected _nombre: string;
+  protected _categoria: string;
+  protected _tipoDeCombustible: string;
+  protected _nivelDeCombustible: number;
+  protected _mision: string;
+  protected _pesoEnKg: number;
+  protected _estado: string = 'En tierra';
+
+  // Constructor
+  constructor(
+    nombre: string,
+    categoria: string,
+    tipoDeCombustible: string,
+    nivelDeCombustible: number,
+    mision: string,
+    pesoEnKg: number
+  ) {
+    this._nombre = nombre;
+    this._categoria = categoria;
+    this._tipoDeCombustible = tipoDeCombustible;
+    this._nivelDeCombustible = nivelDeCombustible;
+    this._mision = mision;
+    this._pesoEnKg = pesoEnKg;
+  }
   
+  // Methods
   abstract despegar(): void;
   abstract aterrizar(): void;
 
   propulsar(): void {
-    this.estado = 'Propulsando.....';
+    this._estado = 'Propulsando.....';
   }
+
+  // Getters
+  public get nombre() : string {
+    return  this._nombre;
+  }
+  public get categoria() : string {
+    return  this._categoria;
+  }
+  public get tipoDeCombustible() : string {
+    return  this._tipoDeCombustible;
+  }
+  public get nivelDeCombustible() : number {
+    return  this._nivelDeCombustible;
+  }
+  public get mision() : string {
+    return  this._mision;
+  }
+  public get pesoEnKg() : number {
+    return  this._pesoEnKg;
+  }
+  public get estado() : string {
+    return  this._estado;
+  }
+
+  // Setters
+  public set nombre(nombre : string) {
+    this._nombre = nombre;
+  }
+  public set categoria(categoria : string) {
+    this._categoria = categoria;
+  }
+  public set tipoDeCombustible(tipoDeCombustible : string) {
+    this._tipoDeCombustible = tipoDeCombustible;
+  }
+  public set nivelDeCombustible(nivelDeCombustible : number) {
+    this._nivelDeCombustible = nivelDeCombustible;
+  }
+  public set mision(mision : string) {
+    this._mision = mision;
+  }
+  public set pesoEnKg(pesoEnKg : number) {
+    this._pesoEnKg = pesoEnKg;
+  }
+  
 }
