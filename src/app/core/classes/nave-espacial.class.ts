@@ -8,6 +8,7 @@ export abstract class NaveEspacial {
   protected _mision: string;
   protected _pesoEnKg: number;
   protected _estado: string = 'En tierra';
+  protected _image: any;
 
   // Constructor
   constructor(
@@ -16,7 +17,8 @@ export abstract class NaveEspacial {
     tipoDeCombustible: string,
     nivelDeCombustible: number,
     mision: string,
-    pesoEnKg: number
+    pesoEnKg: number,
+    image: any
   ) {
     this._nombre = nombre;
     this._categoria = categoria;
@@ -24,6 +26,7 @@ export abstract class NaveEspacial {
     this._nivelDeCombustible = nivelDeCombustible;
     this._mision = mision;
     this._pesoEnKg = pesoEnKg;
+    this._image = image;
   }
   
   // Methods
@@ -56,6 +59,9 @@ export abstract class NaveEspacial {
   public get estado() : string {
     return  this._estado;
   }
+  public get image(): any{
+    return this._image;
+  }
 
   // Setters
   public set nombre(nombre : string) {
@@ -75,6 +81,9 @@ export abstract class NaveEspacial {
   }
   public set pesoEnKg(pesoEnKg : number) {
     this._pesoEnKg = pesoEnKg;
+  }
+  public set image(image: any) {
+    this._image = image;
   }
   
 }

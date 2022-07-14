@@ -10,6 +10,7 @@ export abstract class NaveNoTripulada extends NaveEspacial {
     nivelDeCombustible: number,
     mision: string,
     pesoEnKg: number,
+    image: any
   ) {
     super(
       nombre,
@@ -17,7 +18,8 @@ export abstract class NaveNoTripulada extends NaveEspacial {
       tipoDeCombustible,
       nivelDeCombustible,
       mision,
-      pesoEnKg
+      pesoEnKg,
+      image
     );
   }
 
@@ -61,6 +63,7 @@ export class Explorador extends NaveNoTripulada {
     nivelDeCombustible: number,
     mision: string,
     pesoEnKg: number,
+    image: any
   ) {
     super(
       nombre,
@@ -68,7 +71,8 @@ export class Explorador extends NaveNoTripulada {
       tipoDeCombustible,
       nivelDeCombustible,
       mision,
-      pesoEnKg
+      pesoEnKg,
+      image
     );
   }
 
@@ -105,6 +109,7 @@ export class SondaEspacial extends NaveNoTripulada {
     nivelDeCombustible: number,
     mision: string,
     pesoEnKg: number,
+    image: any
   ) {
     super(
       nombre,
@@ -112,7 +117,8 @@ export class SondaEspacial extends NaveNoTripulada {
       tipoDeCombustible,
       nivelDeCombustible,
       mision,
-      pesoEnKg
+      pesoEnKg,
+      image
     );
   }
 

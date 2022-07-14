@@ -1,37 +1,62 @@
 <h2 class="text-center mt-5 text-primary">Estación Espacial Sofka</h2>
 
 <!-- Principal container -->
-<div class="container">
+<div>
 
   <!-- Row -->
-  <div class="row mt-5">
+  <div class="row mt-5 ms-4 me-4">
 
     <!-- Left sidebar -->
     <div class="col-4">
-      <form>
-        
-      </form>
+      <h5>Ordenar por tipo de nave</h5>
+      <select class="form-select" #mySelect (input)="changeOption(mySelect.value)">
+        <option value="todas" selected>Todas</option>
+        <option value="lanzadera">Nave lanzadera</option>
+        <option value="tripulada">Nave tripulada</option>
+        <option value="no-tripulada">Nave no tripulada</option>
+      </select>
+
+      <div class="mt-5">
+        <h5>Buscar por nombre</h5>
+        <div class="row gap-3">
+          <input type="text" class="form-control col" [(ngModel)]="busqueda" (input)="buscarPorNombre()" placeholder="Nave x">
+          <!-- <button class="btn btn-success col" (click)="buscarPorNombre()">Buscar</button> -->
+        </div>
+      </div>
+
+      <button routerLink="crear" class="btn btn-primary mt-4">Crear nueva nave</button>
     </div>
 
     <!-- Rigth cards -->
     <div class="col-8">
   
-      <div class="card" style="width: 18rem;">
-        <img src="http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcTjj8FfYzpaI0nfj_bj7NkaAc1cnf1gEnjCSGqOMT2GF8oNEnxIHrBg_wEywajqum_K" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
+      <div class="row row-cols-4 g-4">
+
+        <div class="col" *ngFor="let nave of showedNaves">
+
+          <div class="card" >
+            <img [src]="nave.image['url']" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ nave.nombre }}</h5>
+              <p class="card-text"><b class="text-info">Mision: </b> {{ nave.mision }}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><b>Estado: </b> {{ nave.estado }}</li>
+              <li class="list-group-item"><b>Categoria: </b> {{ nave.categoria }}</li>
+              <li class="list-group-item"><b>Peso en Kg: </b> {{ nave.pesoEnKg }}</li>
+              <li class="list-group-item"><b>Tipo de combustible: </b> {{ nave.tipoDeCombustible }}</li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Card link</a>
+            </div>
+          </div>
+
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
-        </ul>
-        <div class="card-body">
-          <a href="#" class="card-link">Card link</a>
-        </div>
+
+
       </div>
+    
+      
       
     </div>
 

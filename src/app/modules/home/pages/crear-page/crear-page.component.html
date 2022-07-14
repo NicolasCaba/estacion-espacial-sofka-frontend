@@ -1,0 +1,26 @@
+<div class="container">
+  <h2 class="text-center mt-5">Crear nueva nave</h2>
+  
+  <div class="row mt-4">
+
+    <select class="form-select" #mySelect (change)="changeOption(mySelect.value)">
+      <option value="" selected disabled hidden>Elige una opcion</option>
+      <option value="lanzadera">Nave lanzadera</option>
+      <option value="tripulada">Nave tripulada</option>
+      <option value="no-tripulada">Nave no tripulada</option>
+    </select>
+
+    <div *ngIf="optionSelected === 'lanzadera'">
+      <app-agregar-nave-lanzadera></app-agregar-nave-lanzadera>
+    </div>
+
+    <div *ngIf="optionSelected === 'no-tripulada'">
+      <app-agregar-nave-no-tripulada></app-agregar-nave-no-tripulada>
+    </div>
+
+    <div *ngIf="optionSelected === 'tripulada'">
+      <app-agregar-nave-tripulada></app-agregar-nave-tripulada>
+    </div>
+
+  </div>
+</div>

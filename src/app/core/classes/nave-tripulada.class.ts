@@ -15,6 +15,7 @@ export class NaveTripulada extends NaveEspacial implements INaveTripulada {
     nivelDeCombustible: number,
     mision: string,
     pesoEnKg: number,
+    image: any
   ) {
     super(
       nombre,
@@ -22,7 +23,8 @@ export class NaveTripulada extends NaveEspacial implements INaveTripulada {
       tipoDeCombustible,
       nivelDeCombustible,
       mision,
-      pesoEnKg
+      pesoEnKg,
+      image
     );
   }
 

@@ -17,7 +17,8 @@ export class NaveLanzadera extends NaveEspacial implements INaveLanzadera {
     nivelDeCombustible: number,
     mision: string,
     pesoEnKg: number,
-    carga: NaveNoTripulada | NaveTripulada
+    carga: NaveNoTripulada | NaveTripulada,
+    image: any
   ) {
     super(
       nombre,
@@ -25,7 +26,8 @@ export class NaveLanzadera extends NaveEspacial implements INaveLanzadera {
       tipoDeCombustible,
       nivelDeCombustible,
       mision,
-      pesoEnKg
+      pesoEnKg,
+      image
     );
 
     this._carga = carga;
@@ -51,11 +53,13 @@ export class NaveLanzadera extends NaveEspacial implements INaveLanzadera {
   public get carga() : NaveNoTripulada | NaveTripulada {
     return this._carga;
   }
+  
 
   // Setters
   public set carga(carga : NaveNoTripulada | NaveTripulada) {
     this._carga = carga;
   }
+  
   
   
 
