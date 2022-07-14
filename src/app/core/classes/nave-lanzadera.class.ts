@@ -1,13 +1,7 @@
+import { INaveLanzadera } from "../interfaces/nave-lanzadera.interface";
 import { NaveEspacial } from "./nave-espacial.class";
 import { NaveNoTripulada } from "./nave-no-tripulada.class";
 import { NaveTripulada } from "./nave-tripulada.class";
-
-// Interface NaveLanzadera
-interface INaveLanzadera {
-  // Methods
-  cambiarCarga(): void;
-  soltarCarga(): boolean;
-}
 
 
 // Class NaveLanzadera

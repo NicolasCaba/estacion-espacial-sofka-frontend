@@ -1,11 +1,7 @@
+import { INaveTripulada } from '../interfaces/nave-tripulada.interface';
 import { Astronauta } from './astronauta.class';
 import { NaveEspacial } from "./nave-espacial.class";
 
-interface INaveTripulada {
-  // Methods
-  subirAstronauta(astronauta: Astronauta): void;
-  bajarAstronauta(astronauta: Astronauta): boolean;
-}
 
 export class NaveTripulada extends NaveEspacial implements INaveTripulada {
   // Attributes
