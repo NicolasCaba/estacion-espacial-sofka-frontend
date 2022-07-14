@@ -27,6 +27,9 @@ export class Astronauta {
   public get cargo() : string {
     return this._cargo;
   }
+  public get estado() : string {
+    return this._estado;
+  }
 
   // Setters
   public set cargo(cargo : string) {

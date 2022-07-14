@@ -27,9 +27,23 @@ export class NaveTripulada extends NaveEspacial implements INaveTripulada {
   }
 
   // Methods
+  // Init launch if all crew menbers are ready
   despegar(): void {
-    throw new Error("Method not implemented.");
+    let astronautasListos: number = 0;
+
+    this._equipo.forEach((astronauta) => {
+      if (astronauta.estado === 'Listo para despegar') {
+        astronautasListos++;
+      }
+    });
+
+    if (astronautasListos === this._equipo.length) {
+      this._estado = 'Despegando....';
+    } else {
+      this._estado = 'A la espera';
+    }
   }
+
   // Add a crew menber
   subirAstronauta(astronauta: Astronauta): void {
     astronauta.cambiarEstado('A Bordo');
@@ -46,8 +60,12 @@ export class NaveTripulada extends NaveEspacial implements INaveTripulada {
     }
     return false;
   }
+
+  // Land
   aterrizar(): void {
-    throw new Error("Method not implemented.");
+    if (this._mision === 'Aterrizar') {
+      this._estado = 'Aterrizando....';
+    }
   }
 
   // Getters
