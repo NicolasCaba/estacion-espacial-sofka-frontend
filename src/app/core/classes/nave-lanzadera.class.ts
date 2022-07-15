@@ -39,14 +39,16 @@ export class NaveLanzadera extends NaveEspacial implements INaveLanzadera {
       this._estado = 'Despegando....';
     }
   }
-  cambiarCarga(): void {
-    throw new Error("Method not implemented.");
+  cambiarCarga(carga: NaveNoTripulada | NaveTripulada): void {
+    this._carga = carga;
   }
-  soltarCarga(): boolean {
-    throw new Error("Method not implemented.");
+  soltarCarga(): void {
+    this._estado = 'Soltando carga';
   }
   aterrizar(): void {
-
+    if (this._nivelDeCombustible < 10) {
+      this._estado = 'Aterrizando....';
+    }
   }
 
   // Getters
