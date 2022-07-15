@@ -1,3 +1,114 @@
-<div class="container">
-  
+<div class="container mt-5">
+
+  <div>
+    <!-- nombre -->
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nave.nombre">
+    </div>
+    <!-- categoria -->
+    <div class="mb-3">
+      <label for="categoria" class="form-label">Categoria</label>
+      <select class="form-select" #mySelect [(ngModel)]="nave.categoria">
+        <option value="lanzadera">Nave lanzadera</option>
+        <option value="tripulada">Nave tripulada</option>
+        <option value="no-tripulada">Nave no tripulada</option>
+      </select>
+    </div>
+    <!-- tipoDeCombustible -->
+    <div class="mb-3">
+      <label for="tipoDeCombustible" class="form-label">Tipo de combustible</label>
+      <input type="text" class="form-control" id="tipoDeCombustible" name="tipoDeCombustible" [(ngModel)]="nave.tipoDeCombustible">
+    </div>
+    <!-- nivelDeCombustible -->
+    <div class="mb-3">
+      <label for="nivelDeCombustible" class="form-label">Nivel de combustible</label>
+      <input type="number" class="form-control" id="nivelDeCombustible" name="nivelDeCombustible" [(ngModel)]="nave.nivelDeCombustible">
+    </div>
+    <!-- mision -->
+    <div class="mb-3">
+      <label for="mision" class="form-label">Mision</label>
+      <textarea class="form-control" id="mision" rows="3" [(ngModel)]="nave.mision"></textarea>
+    </div>
+    <!-- pesoEnKg -->
+    <div class="mb-3">
+      <label for="pesoEnKg" class="form-label">Peso en kilogramos</label>
+      <input type="text" class="form-control" id="pesoEnKg" name="pesoEnKg" [(ngModel)]="nave.pesoEnKg">
+    </div>
+
+    <!-- File -->
+    <div class="input-group mb-3">
+      <input type="file" class="form-control" id="inputGroupFile02" (change)="archivo($event)">
+      <label class="input-group-text" for="inputGroupFile02" accept="image/*">Imagen</label>
+    </div>
+
+    <!-- equipo -->
+    <div class="row gap-3">
+
+      <!-- Astronauta 1 -->
+      <div class="col">
+        <h6>Astronauta 1</h6> 
+        <!-- nombre mienbro 1 -->
+        <div class="mb-3">
+          <label for="nombreAstronauta1" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombreAstronauta1" name="nombreAstronauta1" [(ngModel)]="astronauta1.nombre">
+        </div>
+        <!-- edad mienbro 1 -->
+        <div class="mb-3">
+          <label for="edadAstronauta1" class="form-label">Edad</label>
+          <input type="number" class="form-control" id="edadAstronauta1" name="edadAstronauta1" [(ngModel)]="astronauta1.edad">
+        </div>
+        <!-- cargo mienbro 1 -->
+        <div class="mb-3">
+          <label for="cargoAstronauta1" class="form-label">Cargo</label>
+          <input type="text" class="form-control" id="cargoAstronauta1" name="cargoAstronauta1" [(ngModel)]="astronauta1.cargo">
+        </div>
+      </div>
+
+      <!-- Astronauta 2 -->
+      <div class="col">
+        <h6>Astronauta 2</h6> 
+        <!-- nombre mienbro 2 -->
+        <div class="mb-3">
+          <label for="nombreAstronauta2" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombreAstronauta2" name="nombreAstronauta2" [(ngModel)]="astronauta2.nombre">
+        </div>
+        <!-- edad mienbro 2 -->
+        <div class="mb-3">
+          <label for="edadAstronauta2" class="form-label">Edad</label>
+          <input type="number" class="form-control" id="edadAstronauta2" name="edadAstronauta2" [(ngModel)]="astronauta2.edad">
+        </div>
+        <!-- cargo mienbro 2 -->
+        <div class="mb-3">
+          <label for="cargoAstronauta2" class="form-label">Cargo</label>
+          <input type="text" class="form-control" id="cargoAstronauta2" name="cargoAstronauta2" [(ngModel)]="astronauta2.cargo">
+        </div>
+      </div>
+
+      <!-- Astronauta 3-->
+      <div class="col">
+        <h6>Astronauta 3</h6> 
+        <!-- nombre mienbro 3 -->
+        <div class="mb-3">
+          <label for="nombreAstronauta3" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombreAstronauta3" name="nombreAstronauta3" [(ngModel)]="astronauta3.nombre">
+        </div>
+        <!-- edad mienbro 3 -->
+        <div class="mb-3">
+          <label for="edadAstronauta3" class="form-label">Edad</label>
+          <input type="number" class="form-control" id="edadAstronauta3" name="edadAstronauta3" [(ngModel)]="astronauta3.edad">
+        </div>
+        <!-- cargo mienbro 3 -->
+        <div class="mb-3">
+          <label for="cargoAstronauta3" class="form-label">Cargo</label>
+          <input type="text" class="form-control" id="cargoAstronauta3" name="cargoAstronauta3" [(ngModel)]="astronauta3.cargo">
+        </div>
+      </div>
+
+    </div>
+
+    <button (click)="enviar()" class="btn btn-primary mb-5 float-end" type="button">Guardar</button>
+
+  </div>
+
 </div>

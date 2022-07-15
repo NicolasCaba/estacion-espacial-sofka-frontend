@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HomeRoutingModule } from './home-routing.module';
 
@@ -17,12 +17,13 @@ import { CrearPageComponent } from './pages/crear-page/crear-page.component';
     AgregarNaveTripuladaComponent,
     AgregarNaveNoTripuladaComponent,
     AgregarNaveLanzaderaComponent,
-    CrearPageComponent
+    CrearPageComponent,
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class HomeModule { }

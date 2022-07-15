@@ -35,6 +35,12 @@ export class Astronauta {
   public set cargo(cargo : string) {
     this._cargo = cargo;
   }
+  public set nombre(nombre : string) {
+    this._nombre = nombre;
+  }
+  public set edad(edad : number) {
+    this._edad = edad;
+  }
   
   
 }

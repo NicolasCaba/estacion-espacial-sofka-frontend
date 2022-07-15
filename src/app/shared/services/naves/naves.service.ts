@@ -5,6 +5,7 @@ import { NaveLanzadera } from 'src/app/core/classes/nave-lanzadera.class';
 import { NaveNoTripulada } from 'src/app/core/classes/nave-no-tripulada.class';
 import { NaveTripulada } from 'src/app/core/classes/nave-tripulada.class';
 import { environment } from 'src/environments/environment';
+import { Astronauta } from '../../../core/classes/astronauta.class';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,8 @@ export class NavesService {
   navesNoTripuladas: NaveNoTripulada [] = [];
   navesTripuladas: NaveTripulada[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+  }
 
   // GET naves
   getNavesLanzaderas(): Observable<any> {
@@ -65,13 +67,18 @@ export class NavesService {
   }
 
   // POST create new nave lanzadera
-  createNaveLanzadera(nave: NaveLanzadera): Observable<any> {
+  createNaveLanzadera(nave: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/api/naves/lanzadera`, nave);
   }
-  createNaveNoTripulada(nave: NaveNoTripulada): Observable<any> {
+  createNaveNoTripulada(nave: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/api/naves/no-tripulada`, nave);
   }
-  createNaveTripulada(nave: NaveTripulada): Observable<any> {
+  createNaveTripulada(nave: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/api/naves/tripulada`, nave);
+  }
+
+  // POST create new astronauta
+  createAstronauta(astronauta: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/api/astronautas`, astronauta);
   }
 }

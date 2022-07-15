@@ -1,1 +1,57 @@
-<p>agregar-nave-no-tripulada works!</p>
+<div class="container mt-5">
+
+  <div>
+    <!-- nombre -->
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nave.nombre">
+    </div>
+    <!-- categoria -->
+    <div class="mb-3">
+      <label for="categoria" class="form-label">Categoria</label>
+      <select class="form-select" #mySelect [(ngModel)]="nave.categoria">
+        <option value="lanzadera">Nave lanzadera</option>
+        <option value="tripulada">Nave tripulada</option>
+        <option value="no-tripulada">Nave no tripulada</option>
+      </select>
+    </div>
+    <!-- tipo -->
+    <div class="mb-3">
+      <label for="tipo" class="form-label">Tipo</label>
+      <select class="form-select" #mySelect [(ngModel)]="nave.tipo">
+        <option value="sonda">Sonda</option>
+        <option value="explorador">Explorador</option>
+      </select>
+    </div>
+    <!-- tipoDeCombustible -->
+    <div class="mb-3">
+      <label for="tipoDeCombustible" class="form-label">Tipo de combustible</label>
+      <input type="text" class="form-control" id="tipoDeCombustible" name="tipoDeCombustible" [(ngModel)]="nave.tipoDeCombustible">
+    </div>
+    <!-- nivelDeCombustible -->
+    <div class="mb-3">
+      <label for="nivelDeCombustible" class="form-label">Nivel de combustible</label>
+      <input type="number" class="form-control" id="nivelDeCombustible" name="nivelDeCombustible" [(ngModel)]="nave.nivelDeCombustible">
+    </div>
+    <!-- mision -->
+    <div class="mb-3">
+      <label for="mision" class="form-label">Mision</label>
+      <textarea class="form-control" id="mision" rows="3" [(ngModel)]="nave.mision"></textarea>
+    </div>
+    <!-- pesoEnKg -->
+    <div class="mb-3">
+      <label for="pesoEnKg" class="form-label">Peso en kilogramos</label>
+      <input type="text" class="form-control" id="pesoEnKg" name="pesoEnKg" [(ngModel)]="nave.pesoEnKg">
+    </div>
+
+    <!-- File -->
+    <div class="input-group mb-3">
+      <input type="file" class="form-control" id="inputGroupFile02" (change)="archivo($event)">
+      <label class="input-group-text" for="inputGroupFile02" accept="image/*">Imagen</label>
+    </div>
+
+    <button (click)="enviar()" class="btn btn-primary mb-5 float-end" type="button">Guardar</button>
+
+  </div>
+
+</div>

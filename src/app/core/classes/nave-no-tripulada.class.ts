@@ -2,10 +2,14 @@ import { NaveEspacial } from "./nave-espacial.class";
 
 // Class NaveNoTripulada
 export abstract class NaveNoTripulada extends NaveEspacial {
+  // Attributes
+  protected _tipo: string;
+
   // Contructor
   constructor(
     nombre: string,
     categoria: string,
+    tipo: string,
     tipoDeCombustible: string,
     nivelDeCombustible: number,
     mision: string,
@@ -21,6 +25,8 @@ export abstract class NaveNoTripulada extends NaveEspacial {
       pesoEnKg,
       image
     );
+
+    this._tipo = tipo;
   }
 
   // Methods
@@ -48,6 +54,18 @@ export abstract class NaveNoTripulada extends NaveEspacial {
   enviarInformacion(informacion: Object): void {
     this._estado = 'Enviando informacion....';
   }
+
+  // Getters
+  public get tipo() : string {
+    return this._tipo;
+  }
+
+  // Setters
+  public set tipo(tipo : string) {
+    this._tipo = tipo;
+  }
+  
+  
 }
 
 
@@ -59,6 +77,7 @@ export class Explorador extends NaveNoTripulada {
   constructor(
     nombre: string,
     categoria: string,
+    tipo: string,
     tipoDeCombustible: string,
     nivelDeCombustible: number,
     mision: string,
@@ -68,6 +87,7 @@ export class Explorador extends NaveNoTripulada {
     super(
       nombre,
       categoria,
+      tipo,
       tipoDeCombustible,
       nivelDeCombustible,
       mision,
@@ -105,6 +125,7 @@ export class SondaEspacial extends NaveNoTripulada {
   constructor(
     nombre: string,
     categoria: string,
+    tipo: string,
     tipoDeCombustible: string,
     nivelDeCombustible: number,
     mision: string,
@@ -114,6 +135,7 @@ export class SondaEspacial extends NaveNoTripulada {
     super(
       nombre,
       categoria,
+      tipo,
       tipoDeCombustible,
       nivelDeCombustible,
       mision,
