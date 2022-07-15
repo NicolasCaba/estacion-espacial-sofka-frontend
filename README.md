@@ -2,6 +2,8 @@
 
 Frontend realizado en Angular version 13
 
+Despliege en netlify https://estacion-espacial-sofka.netlify.app/
+
 *---------------------------------------------------------*
 # Angular comments
 
