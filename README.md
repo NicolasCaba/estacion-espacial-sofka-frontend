@@ -1,6 +1,6 @@
 # EstacionEspacialSofkaFrontend
 
-
+Frontend realizado en Angular version 13
 
 *---------------------------------------------------------*
 # Angular comments
